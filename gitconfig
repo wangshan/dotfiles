@@ -1,0 +1,7 @@
+[user]
+	name = Shan Wang
+	email = uniwangshan@gmail.com
+[github]
+	user = wangshan
+[credential]
+	helper = osxkeychain

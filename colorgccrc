@@ -1,0 +1,4 @@
+gcc: /usr/local/bin/ccache-g++.sh
+g++: /usr/local/bin/ccache-g++.sh
+cc: /usr/local/bin/ccache-gcc.sh
+c++: /usr/local/bin/ccache-g++.sh
