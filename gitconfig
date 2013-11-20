@@ -5,3 +5,8 @@
 	user = wangshan
 [credential]
 	helper = osxkeychain
+[color]
+	branch = true
+	status = true
+	diff = true
+	interactive = true

@@ -6,8 +6,8 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-script_name=${0}
-files=`ls -1 | egrep -v 'README|${script_name}'`
+script_name=$(basename ${0})
+files=$(ls -1 | egrep -v "README" | egrep -v "${script_name}")
 
 # create dotfiles_old in homedir
 echo -n "Creating ${olddir} for backup of any existing dotfiles in ~ ..."
@@ -36,21 +36,21 @@ function install_zsh {
             git clone git://github.com/robbyrussell/oh-my-zsh.git
         fi
         # Set the default shell to zsh if it isn't currently set to zsh
-        if [[ `echo $SHELL` != `which zsh` ]]; then
-            chsh -s `which zsh`
+        if [[ "$(echo $SHELL)" != "$(which zsh)" ]]; then
+            chsh -s $(which zsh)
         fi
     else
         # If zsh isn't installed, get the platform of the current machine
-        platform=`uname`;
-        kernel_release=`uname -r | grep -i arch`
-        if [[ ${platform} == "Linux" ]]; then
-            if [[ ${kernel_releaes} != "" ]]; then
+        platform=$(uname)
+        kernel_release=$(uname -r | grep -i arch)
+        if [[ "${platform}" == "Linux" ]]; then
+            if [[ "${kernel_release}" != "" ]]; then
                 sudo pacman -S zsh
                 install_zsh
             else
                 echo "install zsh yourself"
             fi
-        elif [[ ${platform} == 'Darwin' ]]; then
+        elif [[ "${platform}" == "Darwin" ]]; then
             brew install zsh
             install_zsh
             exit
