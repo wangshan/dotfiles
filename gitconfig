@@ -10,3 +10,7 @@
 	status = true
 	diff = true
 	interactive = true
+[alias]
+	logtree = log --graph --oneline --decorate --all
+	logpretty = log --pretty=format:'%C(yellow)%h%Creset -%C(cyan)%d%Creset %s %Cgreen(%cr %an)%Creset' --abbrev-commit --date=relative --graph
+	diffword = diff --word-diff
