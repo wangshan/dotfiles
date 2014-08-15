@@ -112,20 +112,25 @@ map <F11> ,"
 
 " Vundle {
 filetype off
-filetype plugin indent on
 
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call vundle#begin()
 
 " let Vundle manage Vundle
 Bundle 'gmarik/vundle'
 Bundle 'https://github.com/kien/ctrlp.vim.git'
 Bundle 'ack.vim'
+Bundle 'a.vim'
 Bundle 'tpope/vim-fugitive'
+Bundle 'https://github.com/tpope/vim-abolish.git'
 Bundle 'scrooloose/nerdtree'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'godlygeek/tabular'
 " }
+
+
+call vundle#end()
+filetype plugin indent on
 
 " CtrlP {
 let g:ctrlp_map='<c-p>'
