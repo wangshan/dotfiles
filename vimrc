@@ -126,11 +126,11 @@ Bundle 'https://github.com/tpope/vim-abolish.git'
 Bundle 'scrooloose/nerdtree'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'godlygeek/tabular'
-" }
-
 
 call vundle#end()
 filetype plugin indent on
+
+" }
 
 " CtrlP {
 let g:ctrlp_map='<c-p>'
