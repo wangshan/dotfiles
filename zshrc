@@ -34,5 +34,11 @@ plugins=(git osx)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+# Have add this for brew command to work, see here for details:
+# http://apple.stackexchange.com/questions/116459/upgrade-rvm-and-now-path-is-broken
+if [ -x /usr/libexec/path_helper ]; then
+    eval `/usr/libexec/path_helper -s`
+fi
+
 unsetopt correct_all
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
