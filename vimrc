@@ -37,13 +37,16 @@ set autoindent
 set smartindent
 set splitbelow
 set splitright
+
 try
-    colors jellybeans
+    set guifont=Monaco:h14
 catch
+    set guifont=consolas:h12
 endtry
 
-set guifont=Monaco:h14
 set fileformat=unix
+set colorcolumn=80
+au BufReadPost *.hsc set syntax=haskell
 
 if has("autocmd")
 
@@ -126,10 +129,21 @@ Bundle 'https://github.com/tpope/vim-abolish.git'
 Bundle 'scrooloose/nerdtree'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'godlygeek/tabular'
+Bundle 'octol/vim-cpp-enhanced-highlight'
 
 call vundle#end()
 filetype plugin indent on
 
+" }
+
+" colorscheme {
+try
+    "set background=dark
+    " if the colorscheme is managed by vundle, it must appear after Bundle..
+    "colorscheme jellybeans
+    :highlight Comment ctermfg=darkgrey
+catch
+endtry
 " }
 
 " CtrlP {
@@ -137,7 +151,7 @@ let g:ctrlp_map='<c-p>'
 let g:ctrlp_cmd='CtrlP'
 let g:ctrlp_clear_cache_on_exit=0
 let g:ctrlp_working_path_mode='ra'
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pdf,*.png,*.jpg,*.gif
+set wildignore+=*/tmp/*,*.d,*.o,*.hi,*.so,*.swp,*.zip,*.pdf,*.png,*.jpg,*.gif
 let g:ctrlp_custom_ignore={
   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
   \ 'file': '\v\.(exe|so|dll)$',
