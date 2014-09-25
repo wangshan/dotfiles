@@ -13,6 +13,7 @@ set nocompatible
 if &t_Co > 2 || has("gui_running")
   syntax on
   set hlsearch
+  au BufReadPost *.hsc set syntax=haskell
 endif
 
 " allow backspacing over everything in insert mode
@@ -46,10 +47,8 @@ endtry
 
 set fileformat=unix
 set colorcolumn=80
-au BufReadPost *.hsc set syntax=haskell
 
 if has("autocmd")
-
   " Enable file type detection.
   " Use the default filetype settings, so that mail gets 'tw' set to 72,
   " 'cindent' is on in C files, etc.
@@ -73,11 +72,8 @@ if has("autocmd")
     \ endif
 
   augroup END
-
 else
-
   set autoindent		" always set autoindenting on
-
 endif " has("autocmd")
 
 " }}}
@@ -141,7 +137,7 @@ try
     "set background=dark
     " if the colorscheme is managed by vundle, it must appear after Bundle..
     "colorscheme jellybeans
-    :highlight Comment ctermfg=darkgrey
+    ":highlight Comment ctermfg=darkgrey
 catch
 endtry
 " }
