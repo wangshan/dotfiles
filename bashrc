@@ -15,4 +15,4 @@ alias nosvngrep='grep --exclude='*.svn*''
 alias vi='vim'
 PS1='[\u@\h \W]\$ '
 
-export PATH='/usr/local/bin:${PATH}'
+export PATH="/usr/local/bin:${PATH}"
