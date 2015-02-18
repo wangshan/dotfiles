@@ -126,6 +126,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'octol/vim-cpp-enhanced-highlight'
+Bundle 'rust-lang/rust.vim'
 
 call vundle#end()
 filetype plugin indent on
