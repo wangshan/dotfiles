@@ -8,6 +8,9 @@ endif
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" can save swap file for [no name]
+set directory=.,$TEMP
+
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 if &t_Co > 2 || has("gui_running")
