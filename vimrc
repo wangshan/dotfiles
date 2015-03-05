@@ -51,6 +51,15 @@ endtry
 set fileformat=unix
 set colorcolumn=80
 
+" allow switching buffer without saving the current one
+set hidden
+set backupdir=~/tmp
+
+" grey out text quoted by ~~
+au BufRead,BufNewFile *.txt   syntax match StrikeoutMatch /\~\~.*\~\~/
+hi def  StrikeoutColor   ctermbg=darkblue ctermfg=darkgrey    guibg=darkblue guifg=darkgrey
+hi link StrikeoutMatch StrikeoutColor
+
 if has("autocmd")
   " Enable file type detection.
   " Use the default filetype settings, so that mail gets 'tw' set to 72,
@@ -101,11 +110,15 @@ map ,% :s/^/%/<CR>:nohlsearch<CR>
 map ,! :s/^/!/<CR>:nohlsearch<CR>
 map ,; :s/^/;/<CR>:nohlsearch<CR>
 map ,- :s/^/--/<CR>:nohlsearch<CR>
+map ,~ :s/^\(.*\)$/\~\~\1\~\~/<CR>:nohlsearch<CR>
+map ,s :s/\~\~\(.*\)\~\~/\1/<CR>:nohlsearch<CR>
 map ,c :s/^\/\/\\|^--\\|^> \\|^[#"%!;]//<CR>:nohlsearch<CR>
-map <F8> ,#
 map <F7> ,/
+map <F8> ,#
 map <F9> ,c
-map <F11> ,"
+map <F10> ,"
+map <F11> ,~
+map <F12> ,s
 
 " }}}
 
