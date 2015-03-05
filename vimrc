@@ -60,6 +60,10 @@ au BufRead,BufNewFile *.txt   syntax match StrikeoutMatch /\~\~.*\~\~/
 hi def  StrikeoutColor   ctermbg=darkblue ctermfg=darkgrey    guibg=darkblue guifg=darkgrey
 hi link StrikeoutMatch StrikeoutColor
 
+au BufRead,BufNewFile *.txt   syntax match StaredMatch /__.*__/
+hi def  StaredColor   ctermbg=black ctermfg=darkyellow    guibg=black guifg=darkyellow
+hi link StaredMatch StaredColor
+
 if has("autocmd")
   " Enable file type detection.
   " Use the default filetype settings, so that mail gets 'tw' set to 72,
@@ -111,7 +115,9 @@ map ,! :s/^/!/<CR>:nohlsearch<CR>
 map ,; :s/^/;/<CR>:nohlsearch<CR>
 map ,- :s/^/--/<CR>:nohlsearch<CR>
 map ,~ :s/^\(.*\)$/\~\~\1\~\~/<CR>:nohlsearch<CR>
+map ,_ :s/^\(.*\)$/__\1__/<CR>:nohlsearch<CR>
 map ,s :s/\~\~\(.*\)\~\~/\1/<CR>:nohlsearch<CR>
+map ,x :s/__\(.*\)__/\1/<CR>:nohlsearch<CR>
 map ,c :s/^\/\/\\|^--\\|^> \\|^[#"%!;]//<CR>:nohlsearch<CR>
 map <F7> ,/
 map <F8> ,#
