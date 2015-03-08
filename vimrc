@@ -8,9 +8,6 @@ endif
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-" can save swap file for [no name]
-set directory=.,$TEMP
-
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 if &t_Co > 2 || has("gui_running")
@@ -53,7 +50,10 @@ set colorcolumn=80
 
 " allow switching buffer without saving the current one
 set hidden
-set backupdir=~/tmp
+set backupdir=.,$TEMP
+
+" can save swap file for [no name]
+set directory=.,$TEMP
 
 " grey out text quoted by ~~
 au BufRead,BufNewFile *.txt   syntax match StrikeoutMatch /\~\~.*\~\~/
