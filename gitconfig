@@ -16,4 +16,8 @@
 	diffword = diff --word-diff
 
 [difftool]
-    prompt = false
+	prompt = false
+	tool = vimdiff
+    
+[core]
+	pager = less -x1,5
