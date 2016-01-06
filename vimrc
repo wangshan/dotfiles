@@ -126,6 +126,9 @@ map <F10> ,"
 map <F11> ,~
 map <F12> ,s
 
+" press jj to go back to normal mode
+inoremap jj <ESC><CR>
+
 " }}}
 
 
@@ -149,6 +152,9 @@ Bundle 'nanotech/jellybeans.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'octol/vim-cpp-enhanced-highlight'
 Bundle 'rust-lang/rust.vim'
+Bundle 'mattn/emmet-vim'
+Bundle 'tpope/vim-surround'
+Bundle 'Valloric/YouCompleteMe'
 
 call vundle#end()
 filetype plugin indent on
@@ -203,3 +209,6 @@ nnoremap <silent> <leader>gg :GitGutterToggle<CR>
 
 " MacVim specific settings
 set go-=T
+
+" syntax hightlight for cmake
+au BufNewFile,BufRead CMakeLists.txt set filetype=cmake

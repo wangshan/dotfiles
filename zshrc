@@ -42,3 +42,9 @@ fi
 
 unsetopt correct_all
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
+
+# Use Vim from MacVim, in order to use YouCompleteMe, see this question:
+# http://superuser.com/questions/334252/the-best-way-to-make-macvims-vim-console-not-mvim-the-default-instead-of-mac
+alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
+alias vi="/Applications/MacVim.app/Contents/MacOS/Vim"
+alias lrt="ls -lrt"
