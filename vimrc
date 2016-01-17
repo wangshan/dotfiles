@@ -101,6 +101,9 @@ map <F5> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
 " Yank(copy) to system clipboard
 noremap <leader>y "+y
 
+" ctrl + l in insert mode to split line
+imap <C-l> <CR><Esc>O
+
 " tags hot keys
 "nnoremap <silent> <F12> :TlistToggle<CR>
 "map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
@@ -156,6 +159,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'mattn/emmet-vim'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'Valloric/MatchTagAlways'
+Bundle 'Raimondi/delimitMate'
 
 call vundle#end()
 filetype plugin indent on
@@ -211,8 +215,13 @@ let g:ycm_global_ycm_extra_conf='~/.ycm_extra_conf.py'
 nnoremap <leader>jD :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>jd :YcmCompleter GoToImprecise<CR>
 nnoremap <Leader>jt :YcmCompleter GetType<CR>
-let g:ycm_key_invoke_completion='<C-m>'
+let g:ycm_key_invoke_completion='<C-k>'
 let g:ycm_auto_trigger=0
+" These are the tweaks I apply to YCM's config, you don't need them but they
+" might help." YCM gives you popups and splits by default that some people
+" might not like, so these should tidy it up a bit for you.
+let g:ycm_add_preview_to_completeopt=0
+set completeopt-=preview
 " }
                                                                      
 " }}}
@@ -223,3 +232,7 @@ set go-=T
 
 " syntax hightlight for cmake
 au BufNewFile,BufRead CMakeLists.txt set filetype=cmake
+
+" close auto complete window after selection
+autocmd CompleteDone * pclose
+
