@@ -211,7 +211,7 @@ let g:ycm_global_ycm_extra_conf='~/.ycm_extra_conf.py'
 nnoremap <leader>jD :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>jd :YcmCompleter GoToImprecise<CR>
 nnoremap <Leader>jt :YcmCompleter GetType<CR>
-let g:ycm_key_invoke_completion='<C-Space>'
+let g:ycm_key_invoke_completion='<C-m>'
 let g:ycm_auto_trigger=0
 " }
                                                                      
