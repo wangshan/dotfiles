@@ -152,9 +152,10 @@ Bundle 'nanotech/jellybeans.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'octol/vim-cpp-enhanced-highlight'
 Bundle 'rust-lang/rust.vim'
-Bundle 'mattn/emmet-vim'
 Bundle 'tpope/vim-surround'
+Bundle 'mattn/emmet-vim'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'Valloric/MatchTagAlways'
 
 call vundle#end()
 filetype plugin indent on
