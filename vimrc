@@ -130,7 +130,7 @@ map <F11> ,~
 map <F12> ,s
 
 " press jj to go back to normal mode
-inoremap jj <ESC><CR>
+inoremap jj <ESC>
 
 " }}}
 
