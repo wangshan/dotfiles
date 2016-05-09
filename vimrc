@@ -130,7 +130,11 @@ map <F11> ,~
 map <F12> ,s
 
 " press jj to go back to normal mode
-inoremap jj <ESC><CR>
+inoremap jj <ESC>
+inoremap jk <ESC><CR>
+
+" add ; to end of line
+inoremap kk <Esc>A;<Esc>
 
 " }}}
 
@@ -183,7 +187,7 @@ let g:ctrlp_clear_cache_on_exit=0
 let g:ctrlp_working_path_mode='ra'
 set wildignore+=*/tmp/*,*.d,*.o,*.hi,*.so,*.swp,*.zip,*.pdf,*.png,*.jpg,*.gif
 let g:ctrlp_custom_ignore={
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'dir':  '\v[\/](node_modules|bower_components|temp)|\.(git|hg|svn)$',
   \ 'file': '\v\.(exe|so|dll)$',
   \ }
 " }
