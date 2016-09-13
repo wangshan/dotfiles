@@ -48,3 +48,7 @@ unsetopt correct_all
 alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
 alias vi="/Applications/MacVim.app/Contents/MacOS/Vim"
 alias lrt="ls -lrt"
+
+# docker
+# Need to do this every time a docker daemon is restarted
+eval $(docker-machine env default)
