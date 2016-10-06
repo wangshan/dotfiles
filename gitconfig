@@ -24,3 +24,4 @@
     
 [core]
 	pager = less -x1,5
+    editor = '/Applications/MacVim.app/Contents/MacOS/Vim'

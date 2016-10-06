@@ -39,6 +39,10 @@ set smartindent
 set splitbelow
 set splitright
 
+autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType css setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType javascript setlocal shiftwidth=4 tabstop=4 softtabstop=4
+
 try
     set guifont=Monaco:h14
 catch
