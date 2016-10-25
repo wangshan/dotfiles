@@ -169,6 +169,7 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'Valloric/MatchTagAlways'
 Bundle 'Raimondi/delimitMate'
 Bundle 'isRuslan/vim-es6'
+Bundle 'leafgarland/typescript-vim.git'
 
 call vundle#end()
 filetype plugin indent on
@@ -192,7 +193,7 @@ let g:ctrlp_clear_cache_on_exit=0
 let g:ctrlp_working_path_mode='ra'
 set wildignore+=*/tmp/*,*.d,*.o,*.hi,*.so,*.swp,*.zip,*.pdf,*.png,*.jpg,*.gif
 let g:ctrlp_custom_ignore={
-  \ 'dir':  '\v[\/](node_modules|bower_components|_temp)|\.(git|hg|svn)$',
+  \ 'dir':  '\v[\/](node_modules|bower_components|_temp|dist|compiled)|\.(git|hg|svn)$',
   \ 'file': '\v\.(exe|so|dll)$',
   \ }
 " }
@@ -231,6 +232,11 @@ let g:ycm_auto_trigger=0
 " might not like, so these should tidy it up a bit for you.
 let g:ycm_add_preview_to_completeopt=0
 set completeopt-=preview
+if !exists("g:ycm_semantic_triggers")
+    let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers['typescript'] = ['.']
+let g:typescript_indent_disable = 1
 " }
                                                                      
 " }}}
