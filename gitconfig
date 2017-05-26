@@ -1,20 +1,28 @@
 [user]
 	name = Shan Wang
 	email = uniwangshan@gmail.com
+	
 [github]
 	user = wangshan
+	
 [credential]
 	helper = osxkeychain
+	
 [color]
 	branch = true
 	status = true
 	diff = true
 	interactive = true
+	
 [alias]
 	logtree = log --graph --oneline --decorate --all
 	logpretty = log --pretty=format:'%C(yellow)%h%Creset -%C(cyan)%d%Creset %s %Cgreen(%cr %an)%Creset' --abbrev-commit --date=relative --graph
 	diffword = diff --word-diff
-
+	recent = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
+    	leaders = shortlog -sn
+    	overview = log --pretty=format:'%C(yellow)%h%Creset -%C(cyan)%d%Creset %s %Cgreen(%cr %an)%Creset' --abbrev-commit --date=relative --no-merges --since='3 months'
+    	recap = git log --all --oneline --no-merges --author="uniwangshan@gmail.com"
+	
 [difftool]
 	prompt = false
 	tool = vimdiff
@@ -24,4 +32,4 @@
     
 [core]
 	pager = less -x1,5
-    editor = '/Applications/MacVim.app/Contents/MacOS/Vim'
+    	editor = '/Applications/MacVim.app/Contents/MacOS/Vim'
