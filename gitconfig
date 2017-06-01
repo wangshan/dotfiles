@@ -15,9 +15,10 @@
 	interactive = true
 	
 [alias]
+	diffword = diff --word-diff
+	dfc = diff --cached
 	logtree = log --graph --oneline --decorate --all
 	logpretty = log --pretty=format:'%C(yellow)%h%Creset -%C(cyan)%d%Creset %s %Cgreen(%cr %an)%Creset' --abbrev-commit --date=relative --graph
-	diffword = diff --word-diff
 	recent = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
     	leaders = shortlog -sn
     	overview = log --pretty=format:'%C(yellow)%h%Creset -%C(cyan)%d%Creset %s %Cgreen(%cr %an)%Creset' --abbrev-commit --date=relative --no-merges --since='3 months'
