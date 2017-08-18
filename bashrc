@@ -47,4 +47,27 @@ csview()
 # Stop ctrl + s from freezing tmux
 stty -ixon
 
+# View csv file in a nicer way
+csview()
+{
+    local sep="${3:-,}"
+    local keyword="${2}"
+    local file="${1}"
+    cat "${file}" | sed -e "s/${sep}${sep}/${sep} ${sep}/g" | column -s~ -t | ack ${keyword} | less -#3 -N -S -X
+}
+
+csview2()
+{
+    local file="$1"
+    cat "$file" | sed -e 's/,,/, ,/g' | column -s, -t | less -#5 -N -S -X
+}
+
+csview3()
+{
+    for arg in ${*}; do
+        local file="${arg}"
+        cat "$file" | sed -e 's/,,/, ,/g' | column -s, -t | less -#5 -N -S -X
+    done
+}
+
 export PATH="/usr/local/bin:${PATH}"
