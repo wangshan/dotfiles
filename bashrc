@@ -21,6 +21,9 @@ alias vi='vim'
 # .git-prompt.sh comes from https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
 source ~/.git-prompt.sh
 
+# Show state next to the branch name                                            
+GIT_PS1_SHOWDIRTYSTATE=1
+
 #0: Normal text
 #1: Bold or light, depending on terminal
 #4: Underline text
