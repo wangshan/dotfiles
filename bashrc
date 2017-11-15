@@ -2,13 +2,15 @@
 # ~/.bashrc
 #
 
+# on MacOS, change this filename to .bash_profile
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
 alias la='ls -la'
-alias ll='ls -lrt'
-alias ltr='ls -ltr'
+alias ll='ls -ltr'
+alias lrt='ls -lrt'
 alias lta='ls -ltra'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
@@ -16,6 +18,7 @@ alias nosvngrep='grep --exclude='*.svn*''
 alias vi='vim'
 
 # Show git branch in the prompt
+# .git-prompt.sh comes from https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
 source ~/.git-prompt.sh
 
 #0: Normal text
