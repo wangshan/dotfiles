@@ -50,7 +50,7 @@ catch
 endtry
 
 set fileformat=unix
-set colorcolumn=80
+set colorcolumn=100
 
 " allow switching buffer without saving the current one
 set hidden
@@ -148,7 +148,7 @@ inoremap kk <Esc>A;<Esc>
 " Vundle {
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle
@@ -165,11 +165,18 @@ Bundle 'octol/vim-cpp-enhanced-highlight'
 Bundle 'rust-lang/rust.vim'
 Bundle 'tpope/vim-surround'
 Bundle 'mattn/emmet-vim'
-Bundle 'Valloric/YouCompleteMe'
+"Bundle 'Valloric/YouCompleteMe'
 Bundle 'Valloric/MatchTagAlways'
 Bundle 'Raimondi/delimitMate'
 Bundle 'isRuslan/vim-es6'
 Bundle 'leafgarland/typescript-vim.git'
+Bundle 'udalov/kotlin-vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+" try this one later
+"Plugin 'itchyny/lightline.vim'
+" managed by vim >=8.0
+" https://github.com/python-mode/python-mode
 
 call vundle#end()
 filetype plugin indent on
@@ -190,11 +197,12 @@ endtry
 let g:ctrlp_map='<c-p>'
 let g:ctrlp_cmd='CtrlP'
 let g:ctrlp_clear_cache_on_exit=0
+let g:ctrlp_show_hidden = 1
 let g:ctrlp_working_path_mode='ra'
 set wildignore+=*/tmp/*,*.d,*.o,*.hi,*.so,*.swp,*.zip,*.pdf,*.png,*.jpg,*.gif
 let g:ctrlp_custom_ignore={
-  \ 'dir':  '\v[\/](node_modules|bower_components|_temp|dist|compiled)|\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'dir':  '\v[\/](node_modules|bower_components|_temp|dist|compiled|dependencies|build|ci-build)|\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll|dylib)|\.(DS_Store|gitmodules)$',
   \ }
 " }
 
@@ -238,6 +246,11 @@ endif
 let g:ycm_semantic_triggers['typescript'] = ['.']
 let g:typescript_indent_disable = 1
 " }
+
+" pymode {
+" pymode seems only work with some specific version of python, disable for now.
+let g:pymode = 0
+" }
                                                                      
 " }}}
 
@@ -250,4 +263,3 @@ au BufNewFile,BufRead CMakeLists.txt set filetype=cmake
 
 " close auto complete window after selection
 autocmd CompleteDone * pclose
-

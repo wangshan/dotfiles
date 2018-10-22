@@ -20,6 +20,7 @@ alias vi='vim'
 # Show git branch in the prompt
 # .git-prompt.sh comes from https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
 source ~/.git-prompt.sh
+GIT_PS1_SHOWDIRTYSTATE=1
 
 #0: Normal text
 #1: Bold or light, depending on terminal
